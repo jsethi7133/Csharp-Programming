@@ -1,0 +1,47 @@
+using System.IO;
+using System;
+class Program
+{
+    static void Main()
+    {
+        int a,b,ch;
+        int con;
+        Console.WriteLine("Enter first number: \n");
+        a=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter second number: \n");
+        b=Convert.ToInt32(Console.ReadLine());
+        Console.Write("1.Addition\n");
+        Console.Write("2.Subtraction\n");
+        Console.Write("3.Multiplication\n");
+        Console.Write("4.Division\n");
+        do
+        {
+        Console.WriteLine("Enter your choice:\n");
+        ch=Convert.ToInt32(Console.ReadLine());
+            switch(ch)
+            {
+                case 1:
+                Console.WriteLine(a+b);
+                break;
+                
+                case 2:
+                Console.WriteLine(a-b);
+                break;
+                
+                case 3:
+                Console.WriteLine(a*b);
+                break;
+                
+                case 4:
+                Console.WriteLine(a/b);
+                break;
+                
+                default:Console.WriteLine("Wrong choice!!\n");
+                break;
+            }
+           Console.WriteLine("Press 5 to exit or any other key to continue:\n");
+           con=Convert.ToInt32(Console.ReadLine());
+        }
+        while(con!=5);
+    }
+}
