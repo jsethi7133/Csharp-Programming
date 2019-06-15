@@ -1,0 +1,33 @@
+using System.IO;
+using System;
+class Program
+{
+    static void Main()
+    {
+        int[] a = new int[5];
+        int b;
+        int flag=0;
+        Console.WriteLine("Enter sorted array of size 5: \n");
+        for(int i=0;i<5;i++)
+            a[i]=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter value to be searched in array:\n");
+        b=Convert.ToInt32(Console.ReadLine());
+        int u=0,l=5,mid=0;
+        while(mid<=u)
+        {
+            mid=(int)((u+l)/2);
+            if(a[mid]<b)
+                l=mid;
+            else if(a[mid]>b)
+                u=mid;
+            else if(a[mid]==b)
+            {
+                Console.Write("Value is present in array at position:{0}.",mid+1);
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+            Console.WriteLine("Value is not present in array.");
+    }
+}
