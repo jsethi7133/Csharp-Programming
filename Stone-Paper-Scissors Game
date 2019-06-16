@@ -1,0 +1,52 @@
+using System.IO;
+using System;
+class Program
+{
+    static void Main()
+    {
+        Random rnd=new Random();
+        int r=rnd.Next(0,300);
+        Console.WriteLine("Choose one of the following:\n");
+        Console.WriteLine("1.Stone\n");
+        Console.WriteLine("2.Paper\n");
+        Console.WriteLine("3.Scisssors\n");
+        int ch=Convert.ToInt32(Console.ReadLine());
+        if(ch==1)
+        {
+            if(r<100)
+            Console.WriteLine("It's a draw.");
+            
+            else if(r>=100 && r<200)
+            Console.WriteLine("You lose. System chose Paper.");
+            
+            else if(r>=200)
+            Console.WriteLine("You won, System chose Scissors.");
+        }
+        
+        else if(ch==2)
+        {
+            if(r>=100 && r<200)
+            Console.WriteLine("It's a draw.");
+            
+            else if(r<100)
+            Console.WriteLine("You won. System chose Stone.");
+            
+            else if(r>=200)
+            Console.WriteLine("You lose, System chose Scissors.");
+        }
+        
+        else if(ch==3)
+        {
+            if(r>=200)
+            Console.WriteLine("It's a draw.");
+            
+            else if(r<100)
+            Console.WriteLine("You lose. System chose Stone.");
+            
+            else if(r>=100 && r<200)
+            Console.WriteLine("You won, System chose Paper.");
+        }
+        else
+            Console.Write("Invalid Choice.\n");
+    }
+}
